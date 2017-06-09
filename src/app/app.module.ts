@@ -10,6 +10,9 @@ import { BuscarQrPage } from '../pages/buscar-qr/buscar-qr';
 import { ContactoPage } from '../pages/contacto/contacto';
 import { SiteDetailPage } from '../pages/site-detail/site-detail';
 import { ModalImagesPage } from '../pages/modal-images/modal-images';
+import { SitesPage } from '../pages/sites/sites';
+import { ProfilePage } from '../pages/profile/profile';
+
 
 @NgModule({
   declarations: [
@@ -18,7 +21,9 @@ import { ModalImagesPage } from '../pages/modal-images/modal-images';
     BuscarQrPage,
     ContactoPage,
     SiteDetailPage,
-    ModalImagesPage
+    ModalImagesPage,
+    SitesPage,
+    ProfilePage
   ],
   imports: [
     BrowserModule,
@@ -31,7 +36,9 @@ import { ModalImagesPage } from '../pages/modal-images/modal-images';
     BuscarQrPage,
     ContactoPage,
     SiteDetailPage,
-    ModalImagesPage
+    ModalImagesPage,
+    SitesPage,
+    ProfilePage
   ],
   providers: [
     StatusBar,

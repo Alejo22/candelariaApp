@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { SitesPage } from '../../pages/sites/sites';
 
 @Component({
   selector: 'page-home',
@@ -17,10 +18,8 @@ export class HomePage {
 
   }
 
-  public createUser(){
-    this.nombre = "Alejandro";
-    this.apellido = "Osorio";
-    this.edad = 29;
+  public goToSites(idSite){
+    this.navCtrl.push(SitesPage , {idSite: idSite});
   }
 
   ionViewDivLoad(){

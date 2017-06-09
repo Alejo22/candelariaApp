@@ -2,7 +2,7 @@
     <ion-content>
         <img src="assets/images/cover.jpg" alt="candelaria cover">
         <ion-list>
-            <button ion-item *ngFor="let page of pages" (click)="goToPage(page.component)">
+            <button ion-item *ngFor="let page of pages" (click)="goToPage(page.component)" menuClose>
                 <ion-icon name="{{page.icon}}" item-start></ion-icon>
                 {{ page.title }}
             </button>
