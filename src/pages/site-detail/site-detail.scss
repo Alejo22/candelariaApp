@@ -1,40 +1,11 @@
 page-site-detail{
-    ion-slides{
-        height: auto;
-        max-height: 600px;
-    }
-
-    .toolbar-background{
-        background: transparent;
-        background-color: transparent;
-    }
-
-    .scroll-content{
-        margin-top: 0 !important;
-    }
-
-    .slide-zoom {
-        max-height: 245px;
-    }
 
     .target{
         margin-top: -8px;
     }
 
     .btn_target{
-        min-height: 40px;
-        font-size: 1.5em;
         margin: 0;
     }
-
-    .content-slider{
-        padding: 30%;
-        height: 30%;
-        width: 100%;
-        background-position: center center;
-        background-repeat: none;
-        background-size: 100% 100%;
-    }
-
 }
     
