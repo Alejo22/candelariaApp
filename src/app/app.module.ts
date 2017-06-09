@@ -8,13 +8,17 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { BuscarQrPage } from '../pages/buscar-qr/buscar-qr';
 import { ContactoPage } from '../pages/contacto/contacto';
+import { SiteDetailPage } from '../pages/site-detail/site-detail';
+import { ModalImagesPage } from '../pages/modal-images/modal-images';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     BuscarQrPage,
-    ContactoPage
+    ContactoPage,
+    SiteDetailPage,
+    ModalImagesPage
   ],
   imports: [
     BrowserModule,
@@ -25,7 +29,9 @@ import { ContactoPage } from '../pages/contacto/contacto';
     MyApp,
     HomePage,
     BuscarQrPage,
-    ContactoPage
+    ContactoPage,
+    SiteDetailPage,
+    ModalImagesPage
   ],
   providers: [
     StatusBar,

@@ -1,12 +1,9 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams , ModalController } from 'ionic-angular';
 
-/**
- * Generated class for the SiteDetailPage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
+import { ModalImagesPage } from '../modal-images/modal-images';
+
+
 @IonicPage()
 @Component({
   selector: 'page-site-detail',
@@ -14,8 +11,23 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class SiteDetailPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public modal:ModalController) {
+
   }
+
+  openModal(){
+    console.log('Show the modal');
+    let user = {
+      name: 'Alejandro',
+      pass: 'Osorio'
+    }
+
+    const myModal = this.modal.create(ModalImagesPage , { objUser: user } );
+    
+    myModal.present();
+  }
+
+  
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad SiteDetailPage');

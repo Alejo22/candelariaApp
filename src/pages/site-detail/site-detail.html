@@ -5,14 +5,55 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
-  <ion-navbar>
-    <ion-title>SiteDetail</ion-title>
+  <ion-navbar >
+   
   </ion-navbar>
-
 </ion-header>
 
+<ion-content>
 
-<ion-content padding>
+ <!-- Description region
+  <ion-card no-border>
+      <ion-item>
+        <ion-icon name="flag" item-start large></ion-icon>
+        <h2>Iglesia De La Orden Tercera</h2>
+      </ion-item>
+      <ion-card-content text-justify>
+        <p>
+          Se cree que el nombre de esta iglesia se debe a que es la tercera construcción religiosa en este lugar, pero en realidad proviene de la comunidad de la Orden Tercera Franciscana. El templo construido entre 1761 y 1780 fue ornamentado con bellas tallas de madera sin recubrir con laminilla de oro, como era costumbre. Su torre fue averiada por el terremoto de 1785 y reconstruida en 1857. La iglesia tenía la particularidad de estar comunicada con el convento de San Francisco por medio de un arco sobre la calle 16 la cual se llamaba calle del arco hoy conocido como callejón de los libreros. Se destaca en su fachada la Oración por la Paz inaugurada por el presidente León Valencia en 1963 para conmemorar la fiesta de San Francisco de Asís.
+        </p>
+      </ion-card-content>
+  </ion-card>
+  Ends Description region -->
 
+  <div class="padding">
+    <h2>Iglesia De La Orden Tercera</h2>
+    <p text-justify>
+          Se cree que el nombre de esta iglesia se debe a que es la tercera construcción religiosa en este lugar, pero en realidad proviene de la comunidad de la Orden Tercera Franciscana. El templo construido entre 1761 y 1780 fue ornamentado con bellas tallas de madera sin recubrir con laminilla de oro, como era costumbre. Su torre fue averiada por el terremoto de 1785 y reconstruida en 1857. La iglesia tenía la particularidad de estar comunicada con el convento de San Francisco por medio de un arco sobre la calle 16 la cual se llamaba calle del arco hoy conocido como callejón de los libreros. Se destaca en su fachada la Oración por la Paz inaugurada por el presidente León Valencia en 1963 para conmemorar la fiesta de San Francisco de Asís.
+      </p>
+  </div>
+   
 </ion-content>
+
+<ion-footer no-padding>
+
+    <!-- Buttons region -->
+    <ion-grid no-padding no-margin class="target">
+      <ion-row>
+        <ion-col col-6>
+          <!-- firts button -->
+          <button ion-button full color="wisteria" class="btn_target" (click)="openModal()">
+            <ion-icon name="navigate" color="white"></ion-icon>
+          </button>
+        </ion-col>
+        <ion-col col-6>
+          <!-- second button -->
+          <button ion-button full color="midnigth-blue" class="btn_target" icon-left>
+            <ion-icon name="star" color="white"></ion-icon>
+            4.7
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  <!-- Ends Buttons region -->
+</ion-footer>
