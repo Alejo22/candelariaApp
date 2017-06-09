@@ -6,7 +6,6 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { HomePage } from '../pages/home/home';
 import { BuscarQrPage } from '../pages/buscar-qr/buscar-qr';
 import { ContactoPage } from '../pages/contacto/contacto';
-import { SiteDetailPage } from '../pages/site-detail/site-detail';
 
 @Component({
   templateUrl: 'app.html'
@@ -20,8 +19,7 @@ export class MyApp {
     this.rootPage = HomePage;
     this.pages = [{title: 'Inicio' ,          component: HomePage ,     icon:"home" },
                   {title: 'Buscar por QR' ,   component: BuscarQrPage , icon:"barcode"},
-                  {title: 'Contactanos' ,     component: ContactoPage , icon:"chatbubbles" } ,
-                  {title: 'Detalle' ,         component: SiteDetailPage , icon:"glasses" }  
+                  {title: 'Contactanos' ,     component: ContactoPage , icon:"chatbubbles" }  
     ];
 
     platform.ready().then(() => {
