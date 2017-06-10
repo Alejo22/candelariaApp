@@ -21,8 +21,8 @@ export class MyApp {
     this.rootPage = HomePage;
     this.pages = [{title: 'Inicio' ,          component: HomePage ,     icon:"home" },
                   {title: 'Buscar por QR' ,   component: BuscarQrPage , icon:"barcode"},
-                  {title: 'Perfil' ,          component: ProfilePage ,  icon:"profile" } ,
-                  {title: 'Detalle' ,         component: SiteDetailPage , icon:"glasses" },  
+                  {title: 'Mi Perfil' ,          component: ProfilePage ,  icon:"person" } ,
+                  {title: 'Sobre la Candelaria' ,         component: SiteDetailPage , icon:"information-circle" },  
     ];
 
     platform.ready().then(() => {

@@ -4,7 +4,13 @@ page-home {
         ion-card {
             position: relative;
             text-align: center;
+            /*width: 100% !important;
+            margin: 0 !important;*/
         }
+
+        /*ion-card:not(last-chid){
+            border: 2px solid #cecece;
+        }*/
 
         .card-title {
             position: absolute;
