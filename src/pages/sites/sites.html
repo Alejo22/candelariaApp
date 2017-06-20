@@ -7,18 +7,18 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Iglesias</ion-title>
+    <ion-title>{{menu.name}}</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 <ion-content>
 
-  <ion-card>
-    <img src="assets/images/candelaria/2.jpg" />
+  <ion-card *ngFor="let site of listSites">
+    <img src="{{site.image}}" />
     <ion-card-content>
       <ion-card-title>
-        IGLESIA DE LA TERCERA ORDEN
+        {{ site.name }}
       </ion-card-title>
       <ion-icon name="star" color="gold"></ion-icon>
       <ion-icon name="star" color="gold"></ion-icon>
@@ -27,8 +27,7 @@
       <ion-icon name="star" color="star-gray"></ion-icon>
       <hr>
       <p text-justify>
-        Se cree que el nombre de esta iglesia se debe a que es la tercera construcción religiosa en este lugar, pero en realidad
-        proviene de la comunidad de la Orden Tercera Franciscana...
+        {{ site.description | slice:0:180 }} ...
       </p>
     </ion-card-content>
     <ion-row>
@@ -41,7 +40,7 @@
       <ion-col col-4>
 
       </ion-col>
-      <ion-col center text-center col-4 (click)="goToSiteDescription()">
+      <ion-col center text-center col-4 (click)="goToSiteDescription(site.id)">
         <button ion-button clear small>
           <div >Ver mas...</div>
         </button>
@@ -49,283 +48,4 @@
     </ion-row>
   </ion-card>
 
-  <ion-card>
-    <img src="assets/images/sites/1.jpg" />
-    <ion-card-content>
-      <ion-card-title>
-        IGLESIA DE EGIPTO
-      </ion-card-title>
-      <ion-icon name="star" color="gold"></ion-icon>
-      <ion-icon name="star" color="gold"></ion-icon>
-      <ion-icon name="star" color="gold"></ion-icon>
-      <ion-icon name="star" color="star-gray"></ion-icon>
-      <ion-icon name="star" color="star-gray"></ion-icon>
-      <hr>
-      <p text-justify>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic, commodi, fugiat. Excepturi rerum quisquam, ut officiis explicabo
-        alias sapiente ex voluptatem molestias facilis animi eos ab magni quasi veritatis, labore.
-      </p>
-    </ion-card-content>
-    <ion-row>
-      <ion-col col-4>
-        <button ion-button icon-left clear small>
-          <ion-icon name="eye"></ion-icon>
-          <div>12 Visitas</div>
-        </button>
-      </ion-col>
-      <ion-col col-4>
-
-      </ion-col>
-      <ion-col center text-center col-4 (click)="goToSiteDescription()">
-        <button ion-button clear small>
-          <div >Ver mas...</div>
-        </button>
-      </ion-col>
-    </ion-row>
-  </ion-card>
-
-  <ion-card>
-    <img src="assets/images/sites/2.jpg" />
-    <ion-card-content>
-      <ion-card-title>
-        IGLESIA LA CANDELARIA
-      </ion-card-title>
-      <ion-icon name="star" color="gold"></ion-icon>
-      <ion-icon name="star" color="gold"></ion-icon>
-      <ion-icon name="star" color="star-gray"></ion-icon>
-      <ion-icon name="star" color="star-gray"></ion-icon>
-      <ion-icon name="star" color="star-gray"></ion-icon>
-      <hr>
-      <p text-justify>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem beatae, magni nam cum ea rem. Dolore itaque sequi ipsam,
-        dolores, inventore saepe quasi deleniti velit eligendi veniam aliquid, quis laboriosam.
-      </p>
-    </ion-card-content>
-    <ion-row>
-      <ion-col col-4>
-        <button ion-button icon-left clear small>
-          <ion-icon name="eye"></ion-icon>
-          <div>12 Visitas</div>
-        </button>
-      </ion-col>
-      <ion-col col-4>
-
-      </ion-col>
-      <ion-col center text-center col-4 (click)="goToSiteDescription()">
-        <button ion-button clear small>
-          <div >Ver mas...</div>
-        </button>
-      </ion-col>
-    </ion-row>
-  </ion-card>
-
-  <ion-card>
-    <img src="assets/images/sites/3.jpg" />
-    <ion-card-content>
-      <ion-card-title>
-        IGLESIA DE LA ORDEN TERCERA
-      </ion-card-title>
-      <ion-icon name="star" color="gold"></ion-icon>
-      <ion-icon name="star" color="gold"></ion-icon>
-      <ion-icon name="star" color="gold"></ion-icon>
-      <ion-icon name="star" color="gold"></ion-icon>
-      <ion-icon name="star" color="star-gray"></ion-icon>
-      <hr>
-      <p text-justify>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic, commodi, fugiat. Excepturi rerum quisquam, ut officiis explicabo
-        alias sapiente ex voluptatem molestias facilis animi eos ab magni quasi veritatis, labore.
-      </p>
-    </ion-card-content>
-    <ion-row>
-      <ion-col col-4>
-        <button ion-button icon-left clear small>
-          <ion-icon name="eye"></ion-icon>
-          <div>12 Visitas</div>
-        </button>
-      </ion-col>
-      <ion-col col-4>
-
-      </ion-col>
-      <ion-col center text-center col-4 (click)="goToSiteDescription()">
-        <button ion-button clear small>
-          <div >Ver mas...</div>
-        </button>
-      </ion-col>
-    </ion-row>
-  </ion-card>
-
-  <ion-card>
-    <img src="assets/images/sites/4.jpg" />
-    <ion-card-content>
-      <ion-card-title>
-        IGLESIA DE LAS NIEVES
-      </ion-card-title>
-      <ion-icon name="star" color="gold"></ion-icon>
-      <ion-icon name="star" color="gold"></ion-icon>
-      <ion-icon name="star" color="gold"></ion-icon>
-      <ion-icon name="star" color="gold"></ion-icon>
-      <ion-icon name="star" color="star-gray"></ion-icon>
-      <hr>
-      <p text-justify>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic, commodi, fugiat. Excepturi rerum quisquam, ut officiis explicabo
-        alias sapiente ex voluptatem molestias facilis animi eos ab magni quasi veritatis, labore.
-      </p>
-    </ion-card-content>
-    <ion-row>
-      <ion-col col-4>
-        <button ion-button icon-left clear small>
-          <ion-icon name="eye"></ion-icon>
-          <div>12 Visitas</div>
-        </button>
-      </ion-col>
-      <ion-col col-4>
-
-      </ion-col>
-      <ion-col center text-center col-4 (click)="goToSiteDescription()">
-        <button ion-button clear small>
-          <div >Ver mas...</div>
-        </button>
-      </ion-col>
-    </ion-row>
-  </ion-card>
-
-  <ion-card>
-    <img src="assets/images/sites/5.jpg" />
-    <ion-card-content>
-      <ion-card-title>
-        IGLESIA DE LA ORDEN TERCERA
-      </ion-card-title>
-      <ion-icon name="star" color="gold"></ion-icon>
-      <ion-icon name="star" color="gold"></ion-icon>
-      <ion-icon name="star" color="gold"></ion-icon>
-      <ion-icon name="star" color="gold"></ion-icon>
-      <ion-icon name="star" color="star-gray"></ion-icon>
-      <hr>
-      <p text-justify>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic, commodi, fugiat. Excepturi rerum quisquam, ut officiis explicabo
-        alias sapiente ex voluptatem molestias facilis animi eos ab magni quasi veritatis, labore.
-      </p>
-    </ion-card-content>
-    <ion-row>
-      <ion-col col-4>
-        <button ion-button icon-left clear small>
-          <ion-icon name="eye"></ion-icon>
-          <div>12 Visitas</div>
-        </button>
-      </ion-col>
-      <ion-col col-4>
-
-      </ion-col>
-      <ion-col center text-center col-4 (click)="goToSiteDescription()">
-        <button ion-button clear small>
-          <div >Ver mas...</div>
-        </button>
-      </ion-col>
-    </ion-row>
-  </ion-card>
-
-  <ion-card>
-    <img src="assets/images/sites/6.jpg" />
-    <ion-card-content>
-      <ion-card-title>
-        IGLESIA SAN AGUSTIN
-      </ion-card-title>
-      <ion-icon name="star" color="gold"></ion-icon>
-      <ion-icon name="star" color="gold"></ion-icon>
-      <ion-icon name="star" color="gold"></ion-icon>
-      <ion-icon name="star" color="gold"></ion-icon>
-      <ion-icon name="star" color="star-gray"></ion-icon>
-      <hr>
-      <p text-justify>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic, commodi, fugiat. Excepturi rerum quisquam, ut officiis explicabo
-        alias sapiente ex voluptatem molestias facilis animi eos ab magni quasi veritatis, labore.
-      </p>
-    </ion-card-content>
-    <ion-row>
-      <ion-col col-4>
-        <button ion-button icon-left clear small>
-          <ion-icon name="eye"></ion-icon>
-          <div>12 Visitas</div>
-        </button>
-      </ion-col>
-      <ion-col col-4>
-
-      </ion-col>
-      <ion-col center text-center col-4 (click)="goToSiteDescription()">
-        <button ion-button clear small>
-          <div >Ver mas...</div>
-        </button>
-      </ion-col>
-    </ion-row>
-  </ion-card>
-
-  <ion-card>
-    <img src="assets/images/sites/7.jpg" />
-    <ion-card-content>
-      <ion-card-title>
-        IGLESIA DE LA VERACRUZ
-      </ion-card-title>
-      <ion-icon name="star" color="gold"></ion-icon>
-      <ion-icon name="star" color="gold"></ion-icon>
-      <ion-icon name="star" color="gold"></ion-icon>
-      <ion-icon name="star" color="gold"></ion-icon>
-      <ion-icon name="star" color="star-gray"></ion-icon>
-      <hr>
-      <p text-justify>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic, commodi, fugiat. Excepturi rerum quisquam, ut officiis explicabo
-        alias sapiente ex voluptatem molestias facilis animi eos ab magni quasi veritatis, labore.
-      </p>
-    </ion-card-content>
-    <ion-row>
-      <ion-col col-4>
-        <button ion-button icon-left clear small>
-          <ion-icon name="eye"></ion-icon>
-          <div>12 Visitas</div>
-        </button>
-      </ion-col>
-      <ion-col col-4>
-
-      </ion-col>
-      <ion-col center text-center col-4 (click)="goToSiteDescription()">
-        <button ion-button clear small>
-          <div >Ver mas...</div>
-        </button>
-      </ion-col>
-    </ion-row>
-  </ion-card>
-
-  <ion-card>
-    <img src="assets/images/sites/8.jpg" />
-    <ion-card-content>
-      <ion-card-title>
-        IGLESIA DE LA CONCEPCION
-      </ion-card-title>
-      <ion-icon name="star" color="gold"></ion-icon>
-      <ion-icon name="star" color="gold"></ion-icon>
-      <ion-icon name="star" color="gold"></ion-icon>
-      <ion-icon name="star" color="gold"></ion-icon>
-      <ion-icon name="star" color="star-gray"></ion-icon>
-      <hr>
-      <p text-justify>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic, commodi, fugiat. Excepturi rerum quisquam, ut officiis explicabo
-        alias sapiente ex voluptatem molestias facilis animi eos ab magni quasi veritatis, labore.
-      </p>
-    </ion-card-content>
-    <ion-row>
-      <ion-col col-4>
-        <button ion-button icon-left clear small>
-          <ion-icon name="eye"></ion-icon>
-          <div>12 Visitas</div>
-        </button>
-      </ion-col>
-      <ion-col col-4>
-
-      </ion-col>
-      <ion-col center text-center col-4 (click)="goToSiteDescription()">
-        <button ion-button clear small>
-          <div >Ver mas...</div>
-        </button>
-      </ion-col>
-    </ion-row>
-  </ion-card>
 </ion-content>

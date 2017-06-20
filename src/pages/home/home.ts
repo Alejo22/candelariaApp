@@ -2,28 +2,30 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { SitesPage } from '../../pages/sites/sites';
 
+import { DrupalServiceProvider } from '../../providers/drupal-service/drupal-service';
+
 @Component({
   selector: 'page-home',
-  templateUrl: 'home.html'
+  templateUrl: 'home.html',
+  providers: [DrupalServiceProvider]
 })
 
 export class HomePage {
+  public listItemMenu:any;
 
-  saludo: string = "Hola Alejo";
-  nombre:string;
-  apellido:string;
-  edad:number;
 
-  constructor(public navCtrl: NavController) {
-
+  constructor(public navCtrl: NavController , public ds: DrupalServiceProvider) {
+    this.listItemMenu = [];
   }
 
-  public goToSites(idSite){
-    this.navCtrl.push(SitesPage , {idSite: idSite});
+  public goToSites(menu){
+    this.navCtrl.push(SitesPage , {menu: menu});
   }
 
-  ionViewDivLoad(){
-    console.log('Pagina Cargada');
+  ionViewDidLoad(){
+    this.ds.getMenu().subscribe( menuItem => {
+      this.listItemMenu = menuItem;
+    });
   }
 
 }

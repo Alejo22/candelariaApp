@@ -6,33 +6,16 @@
     <ion-title>
       Candelaria App
     </ion-title>
+    <img class="logo" alt="logo" src="assets/images/logo.png" > 
   </ion-navbar>
 </ion-header>
 
 <ion-content class="card-background-page">
   
-  <ion-card (click)="goToSites(2)">
-    <img src="assets/images/card/iglesias.jpg"/>
-    <div class="card-title">Iglesias</div>
+  <ion-card  *ngFor="let menu of listItemMenu" (click)="goToSites(menu)">
+    <img src="{{menu.image}}"/>
+    <div class="card-title">{{menu.name}}</div>
     <div class="card-subtitle">64 Listados</div>
-  </ion-card>
-  
-  <ion-card (click)="goToSites(1)">
-    <img src="assets/images/card/calles.jpg"/>
-    <div class="card-title">Calles</div>
-    <div class="card-subtitle">41 Listados</div>
-  </ion-card>
-
-  <ion-card (click)="goToSites(3)">
-    <img src="assets/images/card/museos.jpg"/>
-    <div class="card-title">Museos</div>
-    <div class="card-subtitle">24 Listados</div>
-  </ion-card>
-
-  <ion-card (click)="goToSites(4)">
-    <img src="assets/images/card/sitios_interes.jpg"/>
-    <div class="card-title">Turisticos</div>
-    <div class="card-subtitle">35 Listados</div>
   </ion-card>
 
 </ion-content>

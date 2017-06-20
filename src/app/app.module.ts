@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
+import { HttpModule } from '@angular/http';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
@@ -12,6 +13,10 @@ import { SiteDetailPage } from '../pages/site-detail/site-detail';
 import { ModalImagesPage } from '../pages/modal-images/modal-images';
 import { SitesPage } from '../pages/sites/sites';
 import { ProfilePage } from '../pages/profile/profile';
+
+
+
+import { DrupalServiceProvider } from '../providers/drupal-service/drupal-service';
 
 
 @NgModule({
@@ -27,7 +32,8 @@ import { ProfilePage } from '../pages/profile/profile';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    HttpModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -43,7 +49,8 @@ import { ProfilePage } from '../pages/profile/profile';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    DrupalServiceProvider
   ]
 })
 export class AppModule {}
