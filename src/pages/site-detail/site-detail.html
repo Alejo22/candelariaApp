@@ -4,16 +4,16 @@
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>
-      Iglesia
+      {{ site.name }}
     </ion-title>
   </ion-navbar>
 </ion-header>
 <ion-content>
 
-  <img src="assets/images/candelaria/2.jpg" title="2">
+  <img src="{{ site.image }}" title="{{ site.name }}">
 
   <div class="padding" color="wet-asphalt">
-    <h4>Iglesia de la Orden Tercera</h4>
+    <h4>{{ site.name }}</h4>
     <ion-icon name="star" color="gold"></ion-icon>
     <ion-icon name="star" color="gold"></ion-icon>
     <ion-icon name="star" color="gold"></ion-icon>
@@ -37,14 +37,8 @@
       
       
     <hr>
-    <p text-justify>
-      Se cree que el nombre de esta iglesia se debe a que es la tercera construcción religiosa en este lugar, pero en realidad proviene de la comunidad de la Orden Tercera Franciscana. El templo construido entre 1761 y 1780 fue ornamentado con bellas tallas de madera sin recubrir con laminilla de oro, como era costumbre. 
-    </p>
-    <p text-justify>
-      Su torre fue averiada por el terremoto de 1785 y reconstruida en 1857. La iglesia tenía la particularidad de estar comunicada con el convento de San Francisco por medio de un arco sobre la calle 16 la cual se llamaba calle del arco hoy conocido como callejón de los libreros. 
-    </p>
-    <p text-justify>
-      Se destaca en su fachada la Oración por la Paz inaugurada por el presidente León Valencia en 1963 para conmemorar la fiesta de San Francisco de Asís.
+    <p text-justify *ngFor="let p of description">
+      {{p}}.
     </p>
   </div>
    

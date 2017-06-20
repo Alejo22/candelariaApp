@@ -28,7 +28,7 @@ export class SitesPage {
     });
   }
 
-  public goToSiteDescription(){
-    this.navCtrl.push(SiteDetailPage);
+  public goToSiteDescription(site){
+    this.navCtrl.push(SiteDetailPage , {site : site});
   }
 }
