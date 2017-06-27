@@ -1,0 +1,12 @@
+page-rutas {
+    ion-list{
+
+        .item:nth-child(2n){
+            background: #dee5e8;
+        }
+
+        ion-icon{
+            color: #444b5b;
+        }
+    }
+}

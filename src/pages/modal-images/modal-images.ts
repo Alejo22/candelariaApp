@@ -13,18 +13,14 @@ import { IonicPage, NavController, NavParams , ViewController } from 'ionic-angu
   templateUrl: 'modal-images.html',
 })
 export class ModalImagesPage {
+  listaArrayImage:any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController) {
-    let user = this.navParams.get('objUser');
-    console.log(user);
+    this.listaArrayImage = this.navParams.get('listImagesBase64');
   }
 
   dismiss() {
    this.viewCtrl.dismiss();
  }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad ModalImagesPage');
-  }
 
 }

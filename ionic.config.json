@@ -1,5 +1,15 @@
 {
   "name": "CandelariaApp",
   "app_id": "ecae72a2",
-  "type": "ionic-angular"
+  "type": "ionic-angular",
+  "proxies": [
+    {
+      "path": "/api",
+      "proxyUrl": "http://192.168.1.53/candelaria/api/"
+    },
+     {
+      "path": "/image",
+      "proxyUrl": "http://192.168.1.53/candelaria/"
+    }
+  ]
 }

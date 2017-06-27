@@ -18,6 +18,12 @@
     <div class="card-subtitle">64 Listados</div>
   </ion-card>
 
+  <div class="error" [hidden]="!errorActive">
+    <img src="../assets/images/error.png"/>
+    <h3>Opps!!</h3>
+    <p>Algo salio mal, deberías revisar tu conexión internet</p>
+  </div>
+
 </ion-content>
 
 

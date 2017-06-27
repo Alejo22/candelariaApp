@@ -13,10 +13,13 @@ import { SiteDetailPage } from '../pages/site-detail/site-detail';
 import { ModalImagesPage } from '../pages/modal-images/modal-images';
 import { SitesPage } from '../pages/sites/sites';
 import { ProfilePage } from '../pages/profile/profile';
+import { RutasPage } from '../pages/rutas/rutas';
+import { PopOverRutasPage } from '../pages/pop-over-rutas/pop-over-rutas';
 
-
+import { IonicStorageModule } from '@ionic/storage'
 
 import { DrupalServiceProvider } from '../providers/drupal-service/drupal-service';
+
 
 
 @NgModule({
@@ -28,12 +31,18 @@ import { DrupalServiceProvider } from '../providers/drupal-service/drupal-servic
     SiteDetailPage,
     ModalImagesPage,
     SitesPage,
-    ProfilePage
+    ProfilePage,
+    RutasPage,
+    PopOverRutasPage
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    HttpModule
+    HttpModule,
+    IonicStorageModule.forRoot({
+      name : '__siteDB',
+      driverOrder: ['indexeddb', 'sqlite', 'websql']
+    })
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -44,7 +53,9 @@ import { DrupalServiceProvider } from '../providers/drupal-service/drupal-servic
     SiteDetailPage,
     ModalImagesPage,
     SitesPage,
-    ProfilePage
+    ProfilePage,
+    RutasPage,
+    PopOverRutasPage
   ],
   providers: [
     StatusBar,

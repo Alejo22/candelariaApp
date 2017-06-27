@@ -6,20 +6,8 @@
 -->
 <ion-content style="background-color: #222222" >
   <ion-slides effect="slide" pager loop > 
-    <ion-slide>
-      <img src="assets/images/candelaria/1.jpg" title="1">
-    </ion-slide>
-    <ion-slide>
-      <img src="assets/images/candelaria/2.jpg" title="2">
-    </ion-slide>
-    <ion-slide>
-      <img src="assets/images/candelaria/3.jpg" title="3">
-    </ion-slide>
-    <ion-slide>
-      <img src="assets/images/candelaria/4.jpg" title="4">
-    </ion-slide>
-    <ion-slide>
-      <img src="assets/images/candelaria/5.jpg" title="5">
+    <ion-slide *ngFor="let image of listaArrayImage">
+      <img src="{{ image }}">
     </ion-slide>
   </ion-slides>
 

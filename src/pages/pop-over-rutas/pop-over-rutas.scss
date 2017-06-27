@@ -1,0 +1,10 @@
+page-pop-over-rutas {
+    .list, .list-ios{
+        margin-bottom: 0;
+    }
+
+    ion-item-divider{
+        background-color: map-get( $colors, primary) !important;
+        color: map-get( $colors, light) !important;
+    }
+}

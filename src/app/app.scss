@@ -24,11 +24,53 @@
     font-family: Josefin-Regular;
 }
 
+ion-content{
+    background: url(../assets/images/background.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: transparent !important;
+}
+
+.grayscale{
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
+}
+
+ion-menu{
+    .item{
+        color: #444b5b;
+    }
+
+    .list-ios .item-block .item-inner , .item-ios.item-block .item-inner{
+        border-bottom: 0 !important;
+    }
+    
+}
+
+div.error{
+    text-align: center;
+    margin-top: 40px;
+
+    img{
+        width: 50%;
+    }
+}
+
+div.error.no-center{
+    margin: 5px 0;
+    img{
+        width: 45%;
+    }
+}
+
 .list-ios>.item-block:first-child {
     border-top: none;
 }
 .list-ios>.item-block:last-child {
     border-bottom: none;
 }
+
+
 
 

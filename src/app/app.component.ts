@@ -7,7 +7,8 @@ import { HomePage } from '../pages/home/home';
 import { BuscarQrPage } from '../pages/buscar-qr/buscar-qr';
 //import { ContactoPage } from '../pages/contacto/contacto';
 import { SiteDetailPage } from '../pages/site-detail/site-detail';
-import { ProfilePage } from '../pages/profile/profile';
+//import { ProfilePage } from '../pages/profile/profile';
+import { RutasPage } from '../pages/rutas/rutas';
 
 @Component({
   templateUrl: 'app.html'
@@ -21,7 +22,7 @@ export class MyApp {
     this.rootPage = HomePage;
     this.pages = [{title: 'Inicio' ,          component: HomePage ,     icon:"home" },
                   {title: 'Buscar por QR' ,   component: BuscarQrPage , icon:"barcode"},
-                  {title: 'Mi Perfil' ,          component: ProfilePage ,  icon:"person" } ,
+                  {title: 'Mis Rutas' ,          component: RutasPage ,  icon:"compass" } ,
                   {title: 'Sobre la Candelaria' ,         component: SiteDetailPage , icon:"information-circle" },  
     ];
 

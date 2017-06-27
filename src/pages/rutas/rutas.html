@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Mis Rutas
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<!-- No rutas section--> No rutas section-->
+<ion-content padding [hidden]="rutasToShow">
+  <div class="error">
+    <img class="logos" alt="logo" src="assets/icon/routes.png" > 
+    <h3>Opps!!</h3>
+    <p>No hemos encontrado rutas creadas</p>
+  </div>
+  <button ion-button icon-lef block (click)="crearRuta()">
+      Crear una ruta
+  </button>
+</ion-content>
+<!-- End No rutas-->
+
+<!-- Seccion rutas-->
+<ion-content padding [hidden]="!rutasToShow" class="getstart">
+  <div class="error no-center">
+    <img class="logos" alt="logo" src="assets/icon/routes.png" > 
+    <h2>Rutas creadas</h2>
+  </div>
+
+  <ion-list no-lines>
+    <button ion-item *ngFor="let ruta of rutas" (click)="itemSelected(item)">
+      <ion-icon name="locate" item-start></ion-icon>
+      <h2>{{ruta.name}}</h2>
+      <p>{{ruta.description}}</p>
+      
+    </button>
+  </ion-list>
+
+  <button ion-button icon-lef block (click)="crearRuta()" >
+    Crear nueva ruta
+  </button>
+
+</ion-content>
+<!-- End rutas-->

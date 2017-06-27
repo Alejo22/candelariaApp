@@ -1,5 +1,4 @@
 <ion-menu [content]="Navegador">
-    <ion-content>
         <img src="assets/images/cover.jpg" alt="candelaria cover">
         <ion-list>
             <button ion-item *ngFor="let page of pages" (click)="goToPage(page.component)" menuClose>
@@ -7,7 +6,6 @@
                 {{ page.title }}
             </button>
         </ion-list>
-    </ion-content>
 </ion-menu>
 
 <ion-nav #Navegador [root]="rootPage"></ion-nav>

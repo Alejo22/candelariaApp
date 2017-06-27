@@ -13,7 +13,8 @@ export class DrupalServiceProvider {
   server: string;
 
   constructor(public http: Http) {
-    this.server = 'http://192.168.1.53/candelaria/api';
+    this.server = '/api/';
+    //this.server = "http://192.168.1.53/candelaria/api/";
   }
 
   getMenuVersion():void{
@@ -21,13 +22,17 @@ export class DrupalServiceProvider {
   }
 
   getMenu(){
-    return this.http.get( this.server + '/views/tipo_lugar_service')
+    return this.http.get( this.server + 'views/tipo_lugar_service')
     .map(res => res.json());
   }
 
   getListSites(idTipoLugar){
-    console.log( this.server + '/views/lugares_service?args[0]=' + idTipoLugar);
-    return this.http.get( this.server + '/views/lugares_service?args[0]=' + idTipoLugar)
+    return this.http.get( this.server + 'views/lugares_service?args[0]=' + idTipoLugar)
+    .map(res => res.json());
+  }
+
+  getGalleyBySiteId(idSite){
+    return this.http.get( this.server + 'views/list_gallery_service?args[0]=' + idSite)
     .map(res => res.json());
   }
 
