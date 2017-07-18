@@ -23,7 +23,7 @@ $font-path: "../assets/fonts";
 // colors so you can add, rename and remove colors as needed.
 // The "primary" color is the only required color in the map.
 
-$colors: (
+/*$colors: (
   primary:    #19A8E6,
   secondary:  #8e44ad,
   danger:     #f53d3d,
@@ -31,6 +31,18 @@ $colors: (
   dark:       #222,
   midnigth-blue: #2c3e50,
   wet-asphalt: #34495e,
+  gold: gold,
+  star-gray: #999
+);*/
+
+$colors: (
+  primary:    #674172,
+  secondary:  #8e44ad,
+  danger:     #f53d3d,
+  light:      #f4f4f4,
+  dark:       #222,
+  midnigth-blue: #72658D,
+  wet-asphalt: #92516D,
   gold: gold,
   star-gray: #999
 );
@@ -42,6 +54,20 @@ $colors: (
 .padding{
   padding: 0 16px;
 }
+
+.toolbar-content{
+  display: flex;
+}
+
+.toolbar-content-ios {
+    -ms-flex: initial !important ;
+    flex: initial !important;
+    .logo{
+        position: relative;
+        right: 10px;
+    }
+}
+
 
 .toolbar-background, .toolbar-background-ios{
   background-color: map-get( $colors, primary) !important;
@@ -60,6 +86,13 @@ $colors: (
   color: map-get( $colors, light) !important;
 }
 
+ion-slide{
+  background-color: map-get( $colors, dark) !important;
+}
+
+.swiper-pagination-bullet{
+  background-color: map-get( $colors, light) !important; 
+}
 
 // App Material Design Variables
 // --------------------------------------------------

@@ -5,10 +5,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
 import { BuscarQrPage } from '../pages/buscar-qr/buscar-qr';
-//import { ContactoPage } from '../pages/contacto/contacto';
-import { SiteDetailPage } from '../pages/site-detail/site-detail';
-//import { ProfilePage } from '../pages/profile/profile';
-import { RutasPage } from '../pages/rutas/rutas';
+import { CandelariaPage } from '../pages/candelaria/candelaria';
+import { FavoritosPage } from '../pages/favoritos/favoritos';
 
 @Component({
   templateUrl: 'app.html'
@@ -20,15 +18,13 @@ export class MyApp {
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     this.rootPage = HomePage;
-    this.pages = [{title: 'Inicio' ,          component: HomePage ,     icon:"home" },
-                  {title: 'Buscar por QR' ,   component: BuscarQrPage , icon:"barcode"},
-                  {title: 'Mis Rutas' ,          component: RutasPage ,  icon:"compass" } ,
-                  {title: 'Sobre la Candelaria' ,         component: SiteDetailPage , icon:"information-circle" },  
+    this.pages = [{title: 'Inicio' ,                 component: HomePage ,        icon:"home" },
+                  {title: 'Buscar por QR' ,          component: BuscarQrPage ,    icon:"barcode"},
+                  {title: 'Mis Favoritos' ,          component: FavoritosPage ,   icon:"heart" } ,
+                  {title: 'Sobre la Candelaria' ,    component: CandelariaPage ,  icon:"information-circle" },  
     ];
 
     platform.ready().then(() => {
-      // Okay, so the platform is ready and our plugins are available.
-      // Here you can do any higher level native things you might need.
       statusBar.styleDefault();
       splashScreen.hide();
     });

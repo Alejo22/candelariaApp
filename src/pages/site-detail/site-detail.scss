@@ -1,4 +1,8 @@
 page-site-detail{
+    .toolbar-background, .toolbar-background-ios {
+        background-color: transparent !important;
+        color: #f4f4f4 !important;
+    }
 
     .target{
         margin-top: -8px;

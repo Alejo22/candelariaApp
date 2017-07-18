@@ -13,7 +13,8 @@ export class DrupalServiceProvider {
   server: string;
 
   constructor(public http: Http) {
-    this.server = '/api/';
+    //this.server = '/api/';
+    this.server = "http://13.59.216.124/candelaria/api/";
     //this.server = "http://192.168.1.53/candelaria/api/";
   }
 
@@ -22,11 +23,13 @@ export class DrupalServiceProvider {
   }
 
   getMenu(){
+    console.log(this.server + 'views/tipo_lugar_service');
     return this.http.get( this.server + 'views/tipo_lugar_service')
     .map(res => res.json());
   }
 
   getListSites(idTipoLugar){
+    console.log( this.server + 'views/lugares_service?args[0]=' + idTipoLugar );
     return this.http.get( this.server + 'views/lugares_service?args[0]=' + idTipoLugar)
     .map(res => res.json());
   }

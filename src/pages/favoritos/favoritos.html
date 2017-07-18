@@ -1,14 +1,27 @@
 <ion-header>
-
   <ion-navbar>
-    <ion-title>{{menu.name}} </ion-title>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Mis Favoritos
+    </ion-title>
   </ion-navbar>
-
 </ion-header>
 
-<ion-content>
+<!-- Favoritos section-->
+<ion-content padding [hidden]="favoritosToShow">
+  <div class="error">
+    <img class="logos" alt="logo" src="assets/icon/routes.png" > 
+    <h3>Opps!!</h3>
+    <p>No tienes favoritos creados</p>
+  </div>
+</ion-content>
+<!-- End No Favoritos section-->
 
-  <ion-card *ngFor="let site of listSites">
+<!-- Seccion rutas -->
+<ion-content [hidden]="!favoritosToShow" class="getstart">
+   <ion-card *ngFor="let site of favoritos">
     <img src="{{site.image}}" (click)="goToSiteDescription(site)" />
     <ion-card-content>
       <ion-card-title>
@@ -25,7 +38,15 @@
       </p>
     </ion-card-content>
     <ion-row>
+      <!--<ion-col col-4>
+        <button ion-button icon-left clear small (click)="presentPopover()">
+          <ion-icon name="eye"></ion-icon>
+          <div>Agregar a una ruta</div>
+        </button>
+      </ion-col>
+      -->
       <ion-col col-8>
+
       </ion-col>
       <ion-col center text-center col-4 (click)="goToSiteDescription(site)">
         <button ion-button clear small>
@@ -34,5 +55,5 @@
       </ion-col>
     </ion-row>
   </ion-card>
-
 </ion-content>
+<!--End rutas-->

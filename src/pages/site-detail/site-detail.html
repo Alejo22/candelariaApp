@@ -1,14 +1,20 @@
-<ion-header>
+<!--<ion-header>
   <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
+    
     <ion-title>
-      {{ site.name }}
+      
     </ion-title>
   </ion-navbar>
 </ion-header>
+-->
+
 <ion-content>
+
+  <ion-fab top left>
+    <button ion-fab mini color="primary" (click)="goToBack()">
+      <ion-icon name="arrow-back"></ion-icon>
+    </button>
+  </ion-fab>
 
   <img src="{{ site.image }}" title="{{ site.name }}">
 
@@ -18,23 +24,7 @@
     <ion-icon name="star" color="gold"></ion-icon>
     <ion-icon name="star" color="gold"></ion-icon>
     <ion-icon name="star" color="gold"></ion-icon>
-    <ion-icon name="star" color="star-gray"></ion-icon>
-    <hr>
-    <ion-row>
-      <ion-col>
-        <button ion-button icon-left clear small>
-          <ion-icon name="heart"></ion-icon>
-          <div>Favoritos</div>
-        </button>
-      </ion-col>
-      <ion-col>
-        <button ion-button icon-left clear small>
-          <ion-icon name="share"></ion-icon>
-          <div>Compartir</div>
-        </button>
-      </ion-col>
-    </ion-row>
-      
+    <ion-icon name="star" color="star-gray"></ion-icon>    
       
     <hr>
     <p text-justify *ngFor="let p of description">
@@ -49,15 +39,21 @@
     <!-- Buttons region -->
     <ion-grid no-padding no-margin class="target">
       <ion-row>
-        <ion-col col-6>
+        <ion-col col-4>
           <!-- firts button -->
-          <button ion-button full color="wisteria" class="btn_target" (click)="openModal()">
+          <button ion-button full color="wet-asphalt" class="btn_target" (click)="openModal()">
             <ion-icon name="images" color="white"></ion-icon>
           </button>
         </ion-col>
-        <ion-col col-6>
+        <ion-col col-4>
           <!-- second button -->
-          <button ion-button full color="midnigth-blue" class="btn_target" icon-left>
+          <button ion-button full color="wisteria" class="btn_target" icon-left  (click)="addMyFavorite()">
+            <ion-icon name="heart" color="white"></ion-icon>
+          </button>
+        </ion-col>
+        <ion-col col-4>
+          <!-- second button -->
+          <button ion-button full color="midnigth-blue" class="btn_target" icon-left  (click)="openModalGoogleMaps()" >
             <ion-icon name="navigate" color="white"></ion-icon>
           </button>
         </ion-col>

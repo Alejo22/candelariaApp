@@ -2,8 +2,6 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams , PopoverController } from 'ionic-angular';
 
 import { SiteDetailPage } from '../site-detail/site-detail';
-import { PopOverRutasPage } from '../pop-over-rutas/pop-over-rutas';
-
 import { DrupalServiceProvider } from '../../providers/drupal-service/drupal-service';
 
 @IonicPage()
@@ -27,11 +25,6 @@ export class SitesPage {
     this.ds.getListSites(this.menu.id).subscribe( sites => {
       this.listSites = sites;
     });
-  }
-
-  presentPopover() {
-    let popover = this.popoverCtrl.create(PopOverRutasPage);
-    popover.present();
   }
 
   public goToSiteDescription(site){

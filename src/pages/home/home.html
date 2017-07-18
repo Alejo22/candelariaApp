@@ -4,14 +4,14 @@
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>
-      Candelaria App
+      La Candelaria
     </ion-title>
-    <img class="logo" alt="logo" src="assets/images/logo.png" > 
+    <img class="logo" alt="logo" src="assets/images/logo.png" >
+
   </ion-navbar>
 </ion-header>
 
 <ion-content class="card-background-page">
-  
   <ion-card  *ngFor="let menu of listItemMenu" (click)="goToSites(menu)">
     <img src="{{menu.image}}"/>
     <div class="card-title">{{menu.name}}</div>
@@ -19,11 +19,10 @@
   </ion-card>
 
   <div class="error" [hidden]="!errorActive">
-    <img src="../assets/images/error.png"/>
-    <h3>Opps!!</h3>
-    <p>Algo salio mal, deberías revisar tu conexión internet</p>
+    <img src="assets/images/error.png"/>
+    <h1>Opps!!</h1>
+    <p>Algo salio mal, creemos que podría ser tu conexión internet.</p>
   </div>
-
 </ion-content>
 
 
