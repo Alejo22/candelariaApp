@@ -3,6 +3,10 @@ import { NavController , LoadingController } from 'ionic-angular';
 import { SitesPage } from '../../pages/sites/sites';
 
 import { DrupalServiceProvider } from '../../providers/drupal-service/drupal-service';
+import {Network} from '@ionic-native/network'
+
+declare var navigator: any;
+declare var Connection: any;
 
 @Component({
   selector: 'page-home',
@@ -14,9 +18,10 @@ export class HomePage {
   public listItemMenu:any;
   public errorActive:boolean;
   public loading:any;
+  public errorMessage: string;
 
 
-  constructor(public navCtrl: NavController , public ds: DrupalServiceProvider , public loadingCtrl:LoadingController) {
+  constructor(public navCtrl: NavController , public ds: DrupalServiceProvider , public loadingCtrl:LoadingController , private network: Network) {
     this.listItemMenu = [];
     this.errorActive = false;
     this.loading = this.loadingCtrl.create({
@@ -31,14 +36,13 @@ export class HomePage {
   }
 
   ionViewDidLoad(){
-    this.ds.getMenu().subscribe( menuItem => {
-      this.listItemMenu = menuItem;
-      this.loading.dismiss();
-    } , error => {
+   
+  }
+
+  showError(errorMessage){
+      this.errorMessage = errorMessage;
       this.errorActive = true;
-      console.log(error.status + ' ' + error );
       this.loading.dismiss();
-    });
   }
 
 }

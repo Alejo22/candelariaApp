@@ -7,6 +7,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 //Pages
 import { MyApp } from './app.component';
+import { SincronizadorPage  } from '../pages/sincronizador/sincronizador';
 import { HomePage } from '../pages/home/home';
 import { SitesPage } from '../pages/sites/sites';
 import { SiteDetailPage } from '../pages/site-detail/site-detail';
@@ -20,11 +21,14 @@ import { CandelariaPage } from '../pages/candelaria/candelaria';
 import { DrupalServiceProvider } from '../providers/drupal-service/drupal-service';
 import { IonicStorageModule } from '@ionic/storage'
 import { BarcodeScanner } from '@ionic-native/barcode-scanner'
+import { Network } from '@ionic-native/network'
+import { SQLite , SQLiteObject} from '@ionic-native/sqlite';
 
 
 @NgModule({
   declarations: [
     MyApp,
+    SincronizadorPage,
     HomePage,
     BuscarQrPage,
     SiteDetailPage,
@@ -46,6 +50,7 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner'
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
+    SincronizadorPage,
     HomePage,
     BuscarQrPage,
     SiteDetailPage,
@@ -60,7 +65,9 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner'
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     DrupalServiceProvider,
-    BarcodeScanner
+    BarcodeScanner,
+    Network,
+    SQLite
   ]
 })
 export class AppModule {}
